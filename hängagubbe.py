@@ -67,5 +67,22 @@ def visa_gubbe(fel):
 
 
 print("\n" * 30)
-visa_gubbe(fel)
-visa_ord(ord, gissningar)
+
+while fel < max_fel:
+    visa_gubbe(fel)
+    visa_ord(ord, gissningar)
+
+    print("Gissade bokstäver:", gissningar)
+    gissning = input("Gissa en bokstav: ").lower()
+
+    if len(gissning) != 1 or not gissning.isalpha():
+        print("Skriv bara en bokstav!")
+        continue
+
+    gissningar.append(gissning)
+
+    if gissning in ord:
+        print("Rätt gissat!")
+    else:
+        print("Fel gissat!")
+        fel = fel + 1
