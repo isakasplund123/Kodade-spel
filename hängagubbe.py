@@ -64,3 +64,8 @@ def visa_ord(ord, gissningar):
 
 def visa_gubbe(fel):
     print(lifeline[fel])
+
+
+print("\n" * 30)
+visa_gubbe(fel)
+visa_ord(ord, gissningar)
