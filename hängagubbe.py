@@ -48,3 +48,19 @@ lifeline = [
      / \
 """
 ]
+
+def visa_ord(ord, gissningar):
+    display = ""
+
+    for bokstav in ord:
+        if bokstav in gissningar:
+            display = display + bokstav + " "
+        else:
+            display = display + "_ "
+
+    print(display)
+    return display
+
+
+def visa_gubbe(fel):
+    print(lifeline[fel])
