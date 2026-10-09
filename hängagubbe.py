@@ -70,9 +70,15 @@ print("\n" * 30)
 
 while fel < max_fel:
     visa_gubbe(fel)
-    visa_ord(ord, gissningar)
+    display = visa_ord(ord, gissningar)
+
+    if "_" not in display:
+        print("Du vann!")
+        print("Ordet var:", ord)
+        break
 
     print("Gissade bokstäver:", gissningar)
+
     gissning = input("Gissa en bokstav: ").lower()
 
     if len(gissning) != 1 or not gissning.isalpha():
@@ -86,3 +92,8 @@ while fel < max_fel:
     else:
         print("Fel gissat!")
         fel = fel + 1
+
+else:
+    visa_gubbe(fel)
+    print("Game over!")
+    print("Ordet var:", ord)
